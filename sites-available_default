@@ -5,7 +5,7 @@
 
         #charset koi8-r;
 
-        access_log  /usr/local/etc/nginx/logs/host.access.log  main;
+        access_log  /usr/local/etc/nginx/logs/default.access.log  main;
 
         location / {
             #root   html;
