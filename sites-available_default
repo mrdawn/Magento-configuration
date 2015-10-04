@@ -12,11 +12,11 @@ upstream fastcgi_backend {
 
         access_log  /usr/local/etc/nginx/logs/default.access.log  main;
 
-        location / {
+        #location / {
             #root   html;
             #index  index.html index.htm;
-            include   /usr/local/etc/nginx/conf.d/php-fpm;
-        }
+            #include   /usr/local/etc/nginx/conf.d/php-fpm;
+        #}
 
         #error_page  404              /404.html;
 
