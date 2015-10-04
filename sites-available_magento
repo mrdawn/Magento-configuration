@@ -1,17 +1,22 @@
+upstream fastcgi_backend {
+   server   127.0.0.1:9000;
+}
     server {
         listen       80;
-        server_name  localhost;
-        root         /Users/dawn/Sites/;
+        server_name  magento.dev;
+
+        set $MAGE_ROOT /Users/dawn/Sites/magento2/;
+        set $MAGE_MODE default;
 
         #charset koi8-r;
 
         access_log  /usr/local/etc/nginx/logs/default.access.log  main;
 
-        location / {
+        #location / {
             #root   html;
             #index  index.html index.htm;
-            include   /usr/local/etc/nginx/conf.d/php-fpm;
-        }
+            #include   /usr/local/etc/nginx/conf.d/php-fpm;
+        #}
 
         #error_page  404              /404.html;
 
@@ -21,6 +26,8 @@
         location = /50x.html {
             root   html;
         }
+
+        include /Users/dawn/Sites/magento2/nginx.conf.sample;
 
         # proxy the PHP scripts to Apache listening on 127.0.0.1:80
         #
